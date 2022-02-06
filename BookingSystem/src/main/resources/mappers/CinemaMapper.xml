@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pcc.booking.mapper.CinemaMapper" >
+  <resultMap id="BaseResultMap" type="com.pcc.booking.entity.Cinema" >
+    <id column="cinema_id" property="cinemaId" jdbcType="BIGINT" />
+    <result column="cinema_name" property="cinemaName" jdbcType="VARCHAR" />
+    <result column="cinema_address" property="cinemaAddress" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cinema_id, cinema_name, cinema_address
+  </sql>
+  <select id="cinemaList" resultMap="BaseResultMap">
+  select
+  <include refid="Base_Column_List"></include>
+        from cinema
+  </select>
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  select
+  <include refid="Base_Column_List" />
+  from cinema
+  where cinema_name= #{cinemaName,jdbcType=VARCHAR}
+</select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from cinema
+    where cinema_id = #{cinemaId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from cinema
+    where cinema_id = #{cinemaId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.pcc.booking.entity.Cinema" >
+    insert into cinema (cinema_id, cinema_name, cinema_address
+      )
+    values (#{cinemaId,jdbcType=BIGINT}, #{cinemaName,jdbcType=VARCHAR}, #{cinemaAddress,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pcc.booking.entity.Cinema" >
+    insert into cinema
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cinemaId != null" >
+        cinema_id,
+      </if>
+      <if test="cinemaName != null" >
+        cinema_name,
+      </if>
+      <if test="cinemaAddress != null" >
+        cinema_address,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cinemaId != null" >
+        #{cinemaId,jdbcType=BIGINT},
+      </if>
+      <if test="cinemaName != null" >
+        #{cinemaName,jdbcType=VARCHAR},
+      </if>
+      <if test="cinemaAddress != null" >
+        #{cinemaAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pcc.booking.entity.Cinema" >
+    update cinema
+    <set >
+      <if test="cinemaName != null" >
+        cinema_name = #{cinemaName,jdbcType=VARCHAR},
+      </if>
+      <if test="cinemaAddress != null" >
+        cinema_address = #{cinemaAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cinema_id = #{cinemaId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pcc.booking.entity.Cinema" >
+    update cinema
+    set cinema_name = #{cinemaName,jdbcType=VARCHAR},
+      cinema_address = #{cinemaAddress,jdbcType=VARCHAR}
+    where cinema_id = #{cinemaId,jdbcType=BIGINT}
+  </update>
+</mapper>

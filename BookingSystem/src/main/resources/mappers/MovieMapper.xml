@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pcc.booking.mapper.MovieMapper" >
+  <resultMap id="BaseResultMap" type="com.pcc.booking.entity.Movie" >
+    <id column="movie_id" property="movieId" jdbcType="INTEGER" />
+    <result column="movie_name" property="movieName" jdbcType="VARCHAR" />
+    <result column="movie_actors" property="movieActors" jdbcType="VARCHAR" />
+    <result column="movie_director" property="movieDirector" jdbcType="VARCHAR" />
+    <result column="movie_detail" property="movieDetail" jdbcType="VARCHAR" />
+    <result column="movie_duration" property="movieDuration" jdbcType="VARCHAR" />
+    <result column="movie_type" property="movieType" jdbcType="VARCHAR" />
+    <result column="movie_score" property="movieScore" jdbcType="REAL" />
+    <result column="movie_boxoffice" property="movieBoxoffice" jdbcType="REAL" />
+    <result column="movie_picture" property="moviePicture" jdbcType="VARCHAR" />
+    <result column="movie_releasetime" property="movieReleasetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    movie_id, movie_name, movie_actors, movie_director, movie_detail, movie_duration, 
+    movie_type, movie_score, movie_boxoffice, movie_picture, movie_releasetime
+  </sql>
+  <select id="selectByMovieName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  select
+  <include refid="Base_Column_List" />
+  from movie
+  where movie_name = #{movieName,jdbcType=VARCHAR}
+</select>
+  <select id="movieList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from movie
+  </select>
+  <select id="hotMovieList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from movie ORDER BY movie_boxoffice DESC limit 4
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from movie
+    where movie_id = #{movieId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from movie
+    where movie_id = #{movieId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pcc.booking.entity.Movie" >
+    insert into movie (movie_id, movie_name, movie_actors, 
+      movie_director, movie_detail, movie_duration, 
+      movie_type, movie_score, movie_boxoffice, 
+      movie_picture, movie_releasetime)
+    values (#{movieId,jdbcType=INTEGER}, #{movieName,jdbcType=VARCHAR}, #{movieActors,jdbcType=VARCHAR}, 
+      #{movieDirector,jdbcType=VARCHAR}, #{movieDetail,jdbcType=VARCHAR}, #{movieDuration,jdbcType=VARCHAR}, 
+      #{movieType,jdbcType=VARCHAR}, #{movieScore,jdbcType=REAL}, #{movieBoxoffice,jdbcType=REAL}, 
+      #{moviePicture,jdbcType=VARCHAR}, #{movieReleasetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pcc.booking.entity.Movie" >
+    insert into movie
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="movieId != null" >
+        movie_id,
+      </if>
+      <if test="movieName != null" >
+        movie_name,
+      </if>
+      <if test="movieActors != null" >
+        movie_actors,
+      </if>
+      <if test="movieDirector != null" >
+        movie_director,
+      </if>
+      <if test="movieDetail != null" >
+        movie_detail,
+      </if>
+      <if test="movieDuration != null" >
+        movie_duration,
+      </if>
+      <if test="movieType != null" >
+        movie_type,
+      </if>
+      <if test="movieScore != null" >
+        movie_score,
+      </if>
+      <if test="movieBoxoffice != null" >
+        movie_boxoffice,
+      </if>
+      <if test="moviePicture != null" >
+        movie_picture,
+      </if>
+      <if test="movieReleasetime != null" >
+        movie_releasetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="movieId != null" >
+        #{movieId,jdbcType=INTEGER},
+      </if>
+      <if test="movieName != null" >
+        #{movieName,jdbcType=VARCHAR},
+      </if>
+      <if test="movieActors != null" >
+        #{movieActors,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDirector != null" >
+        #{movieDirector,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDetail != null" >
+        #{movieDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDuration != null" >
+        #{movieDuration,jdbcType=VARCHAR},
+      </if>
+      <if test="movieType != null" >
+        #{movieType,jdbcType=VARCHAR},
+      </if>
+      <if test="movieScore != null" >
+        #{movieScore,jdbcType=REAL},
+      </if>
+      <if test="movieBoxoffice != null" >
+        #{movieBoxoffice,jdbcType=REAL},
+      </if>
+      <if test="moviePicture != null" >
+        #{moviePicture,jdbcType=VARCHAR},
+      </if>
+      <if test="movieReleasetime != null" >
+        #{movieReleasetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pcc.booking.entity.Movie" >
+    update movie
+    <set >
+      <if test="movieName != null" >
+        movie_name = #{movieName,jdbcType=VARCHAR},
+      </if>
+      <if test="movieActors != null" >
+        movie_actors = #{movieActors,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDirector != null" >
+        movie_director = #{movieDirector,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDetail != null" >
+        movie_detail = #{movieDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDuration != null" >
+        movie_duration = #{movieDuration,jdbcType=VARCHAR},
+      </if>
+      <if test="movieType != null" >
+        movie_type = #{movieType,jdbcType=VARCHAR},
+      </if>
+      <if test="movieScore != null" >
+        movie_score = #{movieScore,jdbcType=REAL},
+      </if>
+      <if test="movieBoxoffice != null" >
+        movie_boxoffice = #{movieBoxoffice,jdbcType=REAL},
+      </if>
+      <if test="moviePicture != null" >
+        movie_picture = #{moviePicture,jdbcType=VARCHAR},
+      </if>
+      <if test="movieReleasetime != null" >
+        movie_releasetime = #{movieReleasetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where movie_id = #{movieId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pcc.booking.entity.Movie" >
+    update movie
+    set movie_name = #{movieName,jdbcType=VARCHAR},
+      movie_actors = #{movieActors,jdbcType=VARCHAR},
+      movie_director = #{movieDirector,jdbcType=VARCHAR},
+      movie_detail = #{movieDetail,jdbcType=VARCHAR},
+      movie_duration = #{movieDuration,jdbcType=VARCHAR},
+      movie_type = #{movieType,jdbcType=VARCHAR},
+      movie_score = #{movieScore,jdbcType=REAL},
+      movie_boxoffice = #{movieBoxoffice,jdbcType=REAL},
+      movie_picture = #{moviePicture,jdbcType=VARCHAR},
+      movie_releasetime = #{movieReleasetime,jdbcType=TIMESTAMP}
+    where movie_id = #{movieId,jdbcType=INTEGER}
+  </update>
+</mapper>
