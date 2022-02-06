@@ -1,0 +1,11 @@
+.cinema{
+ border: 2px white solid;
+  border-radius: 10px;
+  margin: 5px;
+  box-sizing:border-box;
+  background-color:white ;
+}
+
+.movie-picture{
+    border-radius: 8px;
+}

@@ -1,0 +1,35 @@
+<view class="index">
+  <van-search value="{{ value }}" placeholder="请输入电影名" bind:search="onSearch" />
+  <van-notice-bar
+  left-icon="volume-o"
+  text="欢迎来到我的电影票订票选座微信小程序！！！"
+/>
+  <view class="index_swiper">
+    <swiper indicator-dots autoplay circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="id">
+        <navigator>
+          <image mode="widthFix" src="{{item}}" />
+        </navigator>
+
+      </swiper-item>
+
+    </swiper>
+  </view>
+
+  <view class="index_grid">
+    <van-cell
+  is-link
+  title="热映影片"
+  link-type="switchTab"
+  url="/pages/movie/movie"
+/>
+    <van-grid>
+      <van-grid-item use-slot wx:for="{{hotmovie}}" wx:key="item.movieId" data-selectmovie="{{item}}" bindtap="toMovie">
+        <image style="width: 100%; height: 90px;border-radius: 8px;" src="{{item.moviePicture}}" />
+        <text style="vertical-align: middle;font-size:12px;">
+          {{item.movieName}}
+        </text>
+      </van-grid-item>
+    </van-grid>
+  </view>
+</view>

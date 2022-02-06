@@ -1,0 +1,95 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "",
+                    "pathName": "pages/cinema/cinema",
+                    "query": "movie=%7B%22movieId%22%3A1%2C%22movieName%22%3A%22%E6%97%A0%E5%90%8D%E4%B9%8B%E8%BE%88%22%2C%22movieActors%22%3A%22%E9%99%88%E5%BB%BA%E6%96%8C%2C%E4%BB%BB%E7%B4%A0%E6%B1%90%2C%E6%BD%98%E6%96%8C%E9%BE%99%22%2C%22movieDirector%22%3A%22%E9%A5%B6%E6%99%93%E5%BF%97%22%2C%22movieDetail%22%3A%22%E4%B8%80%E5%BA%A7%E5%B1%B1%E9%97%B4%E5%B0%8F%E5%9F%8E%E4%B8%AD%EF%BC%8C%E4%B8%80%E5%AF%B9%E4%BD%8E%E9%85%8D%E5%8A%AB%E5%8C%AA%E3%80%81%E4%B8%80%E4%B8%AA%E8%90%BD%E9%AD%84%E7%9A%84%E6%B3%BC%E7%9A%AE%E4%BF%9D%E5%AE%89%E3%80%81%E4%B8%80%E4%B8%AA%E8%BA%AB%E4%BD%93%E6%AE%8B%E7%96%BE%E5%8D%B4%E6%80%A7%E6%A0%BC%E5%BD%AA%E6%82%8D%E7%9A%84%E6%AE%8B%E6%AF%92%E8%88%8C%E5%A5%B3%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%B3%BB%E5%88%97%E7%94%9F%E6%B4%BB%E5%9C%A8%E7%A4%BE%E4%BC%9A%E4%B8%8D%E5%90%8C%E8%BD%A8%E8%BF%B9%E4%B8%8A%E7%9A%84%E5%B0%8F%E4%BA%BA%E7%89%A9%EF%BC%8C%E5%9C%A8%E4%B8%80%E4%B8%AA%E8%B2%8C%E4%BC%BC%E5%B9%B3%E5%B8%B8%E7%9A%84%E6%97%A5%E5%AD%90%E9%87%8C%EF%BC%8C%E5%9B%A0%E4%B8%BA%E4%B8%80%E6%8A%8A%E4%B8%A2%E5%A4%B1%E7%9A%84%E8%80%81%E6%9E%AA%E5%92%8C%E4%B8%80%E6%A1%A9%E5%BD%93%E5%A4%A9%E5%8F%91%E7%94%9F%E5%9C%A8%E5%9F%8E%E4%B8%AD%E7%9A%84%E4%B9%8C%E9%BE%99%E5%8A%AB%E6%A1%88%EF%BC%8C%E4%BB%8E%E8%80%8C%E8%A2%AB%E9%98%B4%E5%B7%AE%E9%98%B3%E9%94%99%E5%9C%B0%E6%8B%A7%E5%88%B0%E4%B8%80%E8%B5%B7%EF%BC%8C%E5%8F%91%E7%94%9F%E7%9A%84%E4%B8%80%E5%B9%95%E5%B9%95%E4%BB%A4%E4%BA%BA%E5%95%BC%E7%AC%91%E7%9A%86%E9%9D%9E%E7%9A%84%E8%8D%92%E8%AF%9E%E5%96%9C%E5%89%A7%22%2C%22movieDuration%22%3A%22108%E5%88%86%E9%92%9F%22%2C%22movieType%22%3A%22%E8%8D%92%E8%AF%9E%EF%BC%8C%E5%96%9C%E5%89%A7%22%2C%22movieScore%22%3A9.2%2C%22movieBoxoffice%22%3A1.03%2C%22moviePicture%22%3A%22https%3A%2F%2Fp0.meituan.net%2Fmovie%2Fdb233a95c927420707ec0ed47d29f21d321171.jpg%40464w_644h_1e_1c%22%2C%22movieReleasetime%22%3A%222019-07-05T00%3A00%3A00.000%2B00%3A00%22%7D",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/select/select",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/select/select",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/login/login",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/select/select",
+                    "query": "selectmovie=%7B%22movieId%22%3A5%2C%22movieName%22%3A%22%E9%9B%84%E7%8B%AE%E5%B0%91%E5%B9%B4%22%2C%22movieActors%22%3A%22%E6%9D%8E%E6%98%95%2C%E9%99%88%E4%B8%9A%E9%9B%84%2C%E9%83%AD%E7%9A%93%2C%E6%9D%8E%E7%9B%9F%22%2C%22movieDirector%22%3A%22%E5%AD%99%E6%B5%B7%E9%B9%8F%22%2C%22movieDetail%22%3A%22%E6%9C%AC%E7%89%87%E8%AE%B2%E8%BF%B0%E4%BA%86%E4%B8%89%E4%B8%AA%E8%A2%AB%E4%BA%BA%E6%97%A0%E8%A7%86%E5%92%8C%E6%AC%BA%E8%B4%9F%E7%9A%84%E5%B0%91%E5%B9%B4%EF%BC%8C%E9%98%B4%E5%B7%AE%E9%98%B3%E9%94%99%E8%B5%B0%E4%B8%8A%E4%BB%A4%E4%BA%BA%E6%8D%A7%E8%85%B9%E7%9A%84%E8%88%9E%E7%8B%AE%E4%B9%8B%E8%B7%AF%EF%BC%8C%E7%BB%8F%E8%BF%87%E5%B8%88%E5%82%85%E5%92%B8%E9%B1%BC%E5%BC%BA%E7%9A%84%E5%9F%B9%E8%AE%AD%EF%BC%8C%E4%B8%80%E8%B7%AF%E8%B7%8C%E8%B7%8C%E6%92%9E%E6%92%9E%EF%BC%8C%E6%9C%80%E7%BB%88%E5%87%AD%E5%80%9F%E6%BB%A1%E8%85%94%E7%83%AD%E8%A1%80%E5%92%8C%E5%86%B2%E5%8A%B2%EF%BC%8C%E6%88%90%E4%B8%BA%E8%87%AA%E5%B7%B1%E5%BF%83%E4%B8%AD%E2%80%9C%E9%9B%84%E7%8B%AE%E2%80%9D%E7%9A%84%E6%95%85%E4%BA%8B%E3%80%82%22%2C%22movieDuration%22%3A%22104%E5%88%86%E9%92%9F%22%2C%22movieType%22%3A%22%E5%8A%A8%E7%94%BB%20%E5%96%9C%E5%89%A7%22%2C%22movieScore%22%3A9.4%2C%22movieBoxoffice%22%3A2.31%2C%22moviePicture%22%3A%22https%3A%2F%2Fp1.meituan.net%2Fmovie%2F9c7adc8d35a483a954829d970f02028b653288.jpg%40464w_644h_1e_1c%22%2C%22movieReleasetime%22%3A%222021-12-17T08%3A00%3A00.000%2B00%3A00%22%7D",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/pay/pay",
+                    "query": "ticket=%7B%22ticketMovie%22%3A%22%E8%AF%AF%E6%9D%802%22%2C%22ticketSeats%22%3A%5B%7B%22x%22%3A8%2C%22y%22%3A8%7D%5D%2C%22ticketCinema%22%3A%22%E4%B8%87%E8%BE%BE%E5%BD%B1%E5%9F%8E%EF%BC%88%E4%B8%B0%E5%8F%B0%E5%BA%97%EF%BC%89%22%2C%22ticketAddress%22%3A%22%E4%B8%B0%E5%8F%B0%E5%8C%BA%E4%B8%B0%E7%A7%91%E8%B7%AF%E4%B8%8E%E4%BA%94%E5%9C%88%E8%B7%AF%E4%BA%A4%E6%B1%87%E5%A4%84%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BAF6%E5%B1%82%EF%BC%88%E5%9C%B0%E9%93%819%E5%8F%B7%E7%BA%BF%E4%B8%B0%E5%8F%B0%E7%A7%91%E6%8A%80%E5%9B%AD%E7%AB%99C%E5%8F%A3%EF%BC%89%22%2C%22ticketPicture%22%3A%22https%3A%2F%2Fp0.meituan.net%2Fmmdb%2F46d9c0558dff78275d310577bf9ee74e14182914.jpg%40464w_644h_1e_1c%22%2C%22ticketPrice%22%3A%22%22%7D",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/pay/pay",
+                    "query": "ticket=%257B%2522ticketMovie%2522%253A%2522%25E8%25AF%25AF%25E6%259D%25802%2522%252C%2522ticketSeats%2522%253A%255B%257B%2522x%2522%253A8%252C%2522y%2522%253A8%257D%255D%252C%2522ticketCinema%2522%253A%2522%25E4%25B8%2587%25E8%25BE%25BE%25E5%25BD%25B1%25E5%259F%258E%25EF%25BC%2588%25E4%25B8%25B0%25E5%258F%25B0%25E5%25BA%2597%25EF%25BC%2589%2522%252C%2522ticketAddress%2522%253A%2522%25E4%25B8%25B0%25E5%258F%25B0%25E5%258C%25BA%25E4%25B8%25B0%25E7%25A7%2591%25E8%25B7%25AF%25E4%25B8%258E%25E4%25BA%2594%25E5%259C%2588%25E8%25B7%25AF%25E4%25BA%25A4%25E6%25B1%2587%25E5%25A4%2584%25E4%25B8%2587%25E8%25BE%25BE%25E5%25B9%25BF%25E5%259C%25BAF6%25E5%25B1%2582%25EF%25BC%2588%25E5%259C%25B0%25E9%2593%25819%25E5%258F%25B7%25E7%25BA%25BF%25E4%25B8%25B0%25E5%258F%25B0%25E7%25A7%2591%25E6%258A%2580%25E5%259B%25AD%25E7%25AB%2599C%25E5%258F%25A3%25EF%25BC%2589%2522%252C%2522ticketPicture%2522%253A%2522https%253A%252F%252Fp0.meituan.net%252Fmmdb%252F46d9c0558dff78275d310577bf9ee74e14182914.jpg%2540464w_644h_1e_1c%2522%252C%2522ticketPrice%2522%253A%2522%2522%257D",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/pay/pay",
+                    "query": "ticket=%7B%22ticketMovie%22%3A%22%E7%88%B1%E6%83%85%E7%A5%9E%E8%AF%9D%22%2C%22ticketSeats%22%3A%5B%7B%22x%22%3A8%2C%22y%22%3A10%7D%2C%7B%22x%22%3A8%2C%22y%22%3A11%7D%5D%2C%22ticketCinema%22%3A%22%E4%B8%87%E8%BE%BE%E5%BD%B1%E5%9F%8E%EF%BC%88CBD%E5%BA%97%EF%BC%89%22%2C%22ticketAddress%22%3A%22%E6%9C%9D%E9%98%B3%E5%8C%BA%E5%BB%BA%E5%9B%BD%E8%B7%AF93%E5%8F%B7%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BAB%E5%BA%A73%E5%B1%82%22%2C%22ticketPicture%22%3A%22https%3A%2F%2Fp0.meituan.net%2Fmovie%2Faddf7c8023c01237d1ab701aab2b31b82798672.jpg%40464w_644h_1e_1c%22%2C%22ticketPrice%22%3A%22%22%7D",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/pay/pay",
+                    "query": "ticket=%7B%22ticketMovie%22%3A%22%E6%9D%8E%E8%8C%82%E6%89%AE%E5%A4%AA%E5%AD%90%22%2C%22ticketSeats%22%3A%5B%7B%22x%22%3A6%2C%22y%22%3A9%7D%5D%2C%22ticketCinema%22%3A%22%E4%B8%87%E8%BE%BE%E5%BD%B1%E5%9F%8E%EF%BC%88CBD%E5%BA%97%EF%BC%89%22%2C%22ticketAddress%22%3A%22%E6%9C%9D%E9%98%B3%E5%8C%BA%E5%BB%BA%E5%9B%BD%E8%B7%AF93%E5%8F%B7%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BAB%E5%BA%A73%E5%B1%82%22%2C%22ticketPicture%22%3A%22https%3A%2F%2Fp1.meituan.net%2Fmovie%2Fe631fbf6d9059e920c63ccb1720fa74b1300198.jpg%40464w_644h_1e_1c%22%2C%22ticketPrice%22%3A%22%22%7D",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/pay/pay",
+                    "query": "ticket=%7B%22ticketMovie%22%3A%22%E9%9B%84%E7%8B%AE%E5%B0%91%E5%B9%B4%22%2C%22ticketSeats%22%3A%5B%7B%22x%22%3A7%2C%22y%22%3A10%7D%5D%2C%22ticketCinema%22%3A%22%E4%B8%87%E8%BE%BE%E5%BD%B1%E5%9F%8E%EF%BC%88CBD%E5%BA%97%EF%BC%89%22%2C%22ticketAddress%22%3A%22%E6%9C%9D%E9%98%B3%E5%8C%BA%E5%BB%BA%E5%9B%BD%E8%B7%AF93%E5%8F%B7%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BAB%E5%BA%A73%E5%B1%82%22%2C%22ticketPicture%22%3A%22https%3A%2F%2Fp1.meituan.net%2Fmovie%2F9c7adc8d35a483a954829d970f02028b653288.jpg%40464w_644h_1e_1c%22%2C%22ticketPrice%22%3A%2230%22%2C%22ticketDay%22%3A%221-23%22%2C%22ticketHall%22%3A%22%E4%B8%80%E5%8F%B7%E5%8E%85%22%2C%22ticketTime%22%3A%2212%3A00%22%7D",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/login/login",
+                    "query": "",
+                    "scene": null,
+                    "launchMode": "default"
+                }
+            ]
+        }
+    }
+}

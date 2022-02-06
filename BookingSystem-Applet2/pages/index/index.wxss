@@ -1,0 +1,19 @@
+
+.noticeBar{
+  background-color: white;
+}
+
+.index_swiper swiper{
+  height: 340rpx;
+}
+.index_swiper swiper image{
+  width: 100%;
+}
+.index_grid{
+  border: 2px #f7f8fa solid;
+  border-radius: 10px;
+  margin: 5px;
+  box-sizing:border-box;
+  background-color:#f7f8fa ;
+}
+

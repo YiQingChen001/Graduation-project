@@ -1,0 +1,30 @@
+<view class="all_movies" >
+<van-card
+wx:for="{{allMovies}}" wx:key="item.movieId"
+  title="{{item.movieName}}"
+  tag="{{item.movieType}}"
+  thumb="{{ item.moviePicture}}"
+  thumb-class="movie-picture"
+>
+<view slot="desc">
+  主演:{{item.movieActors}}
+  </view>
+  <view slot="desc">
+  时长:{{item.movieDuration}}
+  </view>
+  <view slot="desc">
+  评分:{{item.movieScore}}分
+  </view>
+  <view slot="desc">
+  {{item.movieReleasetime}}上映
+  </view>
+  <view slot="footer">
+    <van-button 
+    round
+    data-selectmovie="{{item}}"  
+    color="#ff351d"
+    size="small"
+    bindtap="toCinemas">购票</van-button>
+  </view>
+</van-card>
+</view>

@@ -1,0 +1,6 @@
+/* pages/movie/movie.wxss */
+
+
+.movie-picture{
+    border-radius: 8px;
+}

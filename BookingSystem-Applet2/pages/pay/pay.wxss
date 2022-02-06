@@ -1,0 +1,27 @@
+/* pages/pay/pay.wxss */
+.pay{
+    width: 95%;
+    margin: auto;
+    
+}
+.item {
+    display: inline-block;
+    width: 22px;
+    margin-right: 5px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    background-color: #1989fa;
+    border-radius: 2px;
+  }
+
+  .pay-button{
+      height:100rpx ;
+      position:fixed;
+      bottom: 0;
+  }
+  .instruction{
+      /* border: 1px solid; */
+      border-radius: 8px;
+      margin-bottom: 100rpx;
+  }

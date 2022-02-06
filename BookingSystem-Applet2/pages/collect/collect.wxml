@@ -1,0 +1,26 @@
+<view wx:if="{{movies.length>0}}" class="collect">
+    <van-card wx:for="{{movies}}" wx:key="item.movieId" title="{{item.movieName}}" thumb="{{ item.moviePicture}}" thumb-class="movie-picture" data-selectmovie="{{item}}" bindtap="toMovie">
+        <view slot="desc">
+        {{item.movieType}}
+        </view>
+        <view slot="desc">
+            主演:{{item.movieActors}}
+        </view>
+        <view slot="desc">
+            时长:{{item.movieDuration}}
+        </view>
+        <view slot="desc">
+            评分:{{item.movieScore}}分
+        </view>
+        <view slot="desc">
+            {{item.movieReleasetime}}上映
+        </view>
+    </van-card>
+</view>
+<view wx:else>
+    <van-empty
+  class="custom-image"
+  image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+  description="还未收藏过电影，快去收藏试试吧！"
+/>
+</view>

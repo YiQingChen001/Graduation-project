@@ -1,0 +1,57 @@
+<view class="seat-select">
+    <view class="seat-select-title">
+        <text style="font-weight:800">{{movie.movieName}}
+        </text>
+        <text style="font-size: 30rpx;">{{movie.movieReleasetime}}上映
+        </text>
+    </view>
+
+    <view class="seat-select-body">
+        <block wx:for="{{seat_position}}" wx:for-item="iitem" wx:for-index="iindex" wx:key="this">
+            <view class="seat-select-row">
+                <block wx:for="{{iitem}}" wx:for-item="jitem" wx:for-index="jindex" wx:key="this">
+                    <block wx:if="{{jitem.num==5}}">
+                        <view class="seat-position-img"></view>
+                    </block>
+                    <block wx:else>
+                        <image class="seat-position-img" mode="scaleToFill" bindtap="getPosition" src="../../icon/{{jitem.src}}" data-x="{{iindex}}" data-y="{{jindex}}" data-src="{{jitem.src}}">
+                        </image>
+                    </block>
+                </block>
+            </view>
+        </block>
+        <view class="seat-select-heading">
+        <view class="seat-picture">
+            <image class="seat-img" src="../../icon/before-select.png">
+            </image>可选
+        </view>
+        <view class="seat-picture">
+            <image class="seat-img" src="../../icon/after-select.png">
+            </image>已选
+        </view>
+        <view class="seat-picture">
+            <image class="seat-img" src="../../icon/no-seat.png">
+            </image>不可选
+        </view>
+    </view>
+    </view>
+    <view class="seat-select-bottom">
+        <view class="seat-select-ending" wx:if="{{select_seats.length>0}}">
+            <view class="seat-select-box" wx:for="{{select_seats}}" wx:key="index">
+                <text>{{item.x}}排{{item.y}}座</text>
+                <view class="close_icon" bindtap="delete" data-position="{{item}}">
+                    <image src="../../icon/delete.png"></image>
+                </view>
+            </view>
+        </view>
+
+            <view wx:if="{{select_seats.length>0}}" class="seat-select-button">
+                <van-button round hairline size="large" type="default" color="#ff820f" bindtap="confirmseat">确定选座</van-button>
+            </view>
+            <view wx:else class="seat-select-button">
+                <van-button round hairline disabled size="large" type="default" color="#ff820f">确定选座</van-button>
+             </view>
+    </view>
+
+
+</view>

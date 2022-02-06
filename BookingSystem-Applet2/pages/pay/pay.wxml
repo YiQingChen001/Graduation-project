@@ -1,0 +1,49 @@
+<view class="pay">
+    <view class="pay-head">
+        <van-card title="{{ticket.ticketMovie}}" thumb="{{ticket.ticketPicture}}">
+            <view slot="desc">
+                {{ticket.ticketCinema}}
+            </view>
+            <view slot="desc">
+                {{ticket.ticketDay}} {{ticket.ticketTime}} {{ticket.ticketHall}}
+            </view>
+            <view slot="desc" wx:for="{{ticket.ticketSeats}}" wx:key="this">
+                {{item.x}}排 {{item.y}}座
+            </view>
+            <view slot="footer">
+                X{{ticket.ticketSeats.length}}
+            </view>
+        </van-card>
+    </view>
+
+    <view class="instruction">
+        <van-cell-group inset>
+            <van-cell title="购票方式" value="正常购票"></van-cell>
+            <van-cell title="影院地址" label="{{ticket.ticketAddress}}"></van-cell>
+            <van-cell title="票价合计" value="￥{{ticket.ticketSeats.length*30}}"></van-cell>
+            <van-cell title="手机号">
+                <view slot="">
+                    <input placeholder="请输入电话号码" type="number" bindinput="getnumber" />
+                </view>
+            </van-cell>
+            <van-cell use-label-slot>
+                <view slot="title" style="display: flex;">
+                    <text>购票须知</text>
+                    <view style="padding-left: 30rpx;">
+                        <van-checkbox value="{{ checked }}" bind:change="onChange"></van-checkbox>
+                    </view>
+                </view>
+                <view slot="label">
+                    <text>{{instruction_content}}</text>
+                </view>
+            </van-cell>
+        </van-cell-group>
+    </view>
+    <view wx:if="{{checked}}" class="pay-button">
+        <van-submit-bar price="{{3000*ticket.ticketSeats.length}}" button-text="去支付" bind:submit="toPay" />
+    </view>
+    <view wx:else class="pay-button">
+        <van-submit-bar disabled price="{{3000*ticket.ticketSeats.length}}" button-text="去支付" bind:submit="toPay" />
+    </view>
+
+</view>
