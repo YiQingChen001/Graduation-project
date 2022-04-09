@@ -2,8 +2,17 @@
 App({
     globalData:{
         ticket_record:[],
-        collect_movie:[],
-        price:30
+        price:30,
+        userId:"",
+        userInfo: {
+            userId:"",
+            userName:"",
+            userEmail:"",
+            userPhone:"",
+            userHeadimg:"",
+            userNumber:"",
+            userPassword:"",
+    },
 	},
   data: {
       

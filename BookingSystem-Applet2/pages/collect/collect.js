@@ -1,4 +1,4 @@
-// pages/collect/collect.js
+
 const app=getApp();
 Page({
 
@@ -13,9 +13,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({
-            movies:app.globalData.collect_movie
-        })
+        // this.setData({
+        //     movies:app.globalData.collect_movie
+        // }),
+        
+
     },
 
     toMovie(e){
@@ -43,9 +45,22 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.setData({
-            movies:app.globalData.collect_movie
-        })
+        wx.request({
+            url: 'http://localhost:8080/collection/collectionList',
+            header: { 'content-type':'application/x-www-form-urlencoded' },
+            method: 'post',
+            data:{
+                userId:app.globalData.userId
+            },
+            success: (result) => {
+              console.log(result.data.data)
+              this.setData({
+                movies: result.data.data
+              })
+            },
+            fail: () => { },
+            complete: () => { }
+          });
     },
 
     /**

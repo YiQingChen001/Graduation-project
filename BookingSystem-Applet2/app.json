@@ -28,7 +28,9 @@
         "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
         "van-dropdown-item": "@vant/weapp/dropdown-item/index",
         "van-collapse": "@vant/weapp/collapse/index",
-        "van-collapse-item": "@vant/weapp/collapse-item/index"
+        "van-collapse-item": "@vant/weapp/collapse-item/index",
+        "van-area": "@vant/weapp/area/index",
+        "van-field": "@vant/weapp/field/index"
   },
   "pages":[
       "pages/index/index",
@@ -41,7 +43,8 @@
       "pages/mine/mine",
       "pages/cinema/cinema",
       "pages/select/select",
-      "pages/empty/empty"
+      "pages/empty/empty",
+      "pages/information/information"
   ],
   "window":{
       "backgroundTextStyle": "light",

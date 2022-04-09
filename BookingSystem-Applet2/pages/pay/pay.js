@@ -59,9 +59,11 @@ Page({
           data: {
             orderMovie:this.data.ticket.ticketMovie,
             orderCinema:this.data.ticket.ticketCinema,
-            orderPrice:this.data.ticket.ticketPrice,
+            orderPrice:this.data.ticket.ticketPrice*this.data.ticket.ticketSeats.length,
             orderDate:this.data.ticket.ticketDay+' '+this.data.ticket.ticketTime+':00',
-            orderSeats:position
+            orderSeats:position,
+            userId:app.globalData.userId
+
           },
           header: {
             // 'content-type':'application/json'

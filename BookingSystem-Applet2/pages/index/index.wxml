@@ -1,8 +1,16 @@
 <view class="index">
+
   <van-search value="{{ value }}" placeholder="请输入电影名" bind:search="onSearch" />
-  <van-notice-bar
+  <!-- <van-notice-bar
   left-icon="volume-o"
-  text="欢迎来到我的电影票订票选座微信小程序！！！"
+  text="欢迎来到我的电影票订票选座微信小程序！"
+/> -->
+<van-notice-bar
+  color="#1989fa"
+  background="#ffffff"
+  left-icon="info-o"
+
+  text="欢迎来到我的电影票订票选座微信小程序！"
 />
   <view class="index_swiper">
     <swiper indicator-dots autoplay circular>

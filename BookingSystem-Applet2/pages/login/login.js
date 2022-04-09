@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
     data:{
         isShow:true,
@@ -9,13 +10,38 @@ Page({
           desc: 'desc',  //desc不可删除 
 
           success:res=>{
-            console.log(res.userInfo); //成功回调
             if(res.userInfo){
+              
                 console.log(res.userInfo); //成功回调
                 wx.setStorageSync('userInfo', res.userInfo),
                 wx.switchTab({
                   url: '/pages/index/index',
                 })
+                // var user={
+                //   userId:"",
+                //   userName:res.userInfo.nickName,
+                //   userEmail:"",
+                //   userPhone:"",
+                //   userHeadimg:"",
+                //   userNumber:"",
+                //   userPassword:"",
+  
+                // }
+
+                wx.request({
+                  url: 'http://localhost:8080/user/insert',
+                  header: {"Content-Type": "application/x-www-form-urlencoded"},
+                  method: 'post',
+                  data:{
+                    userName:res.userInfo.nickName
+                  },
+                  success: (result)=>{
+                    app.globalData.userId=result.data.data;
+                    console.log(result.data.data);
+                  },
+                  fail: ()=>{},
+                  complete: ()=>{}
+              })
             }
             else{
 

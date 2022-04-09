@@ -2,39 +2,32 @@ const app = getApp()
 
 Page({
     data: {
-        showShare: false,
-    options: [
-      [
-        { name: '微信', icon: 'wechat' },
-        { name: '微博', icon: 'weibo' },
-        { name: 'QQ', icon: 'qq' },
-      ],
-      [
-        { name: '复制链接', icon: 'link' },
-        { name: '分享海报', icon: 'poster' },
-        { name: '二维码', icon: 'qrcode' },
-      ],
-    ],
-        userInfo: {},
+        userInfo: {
+                userId:"",
+                userName:"",
+                userEmail:"",
+                userPhone:"",
+                userHeadimg:"",
+                userNumber:"",
+                userPassword:"",
+                
+        },
     },
-    onClick(event) {
-        this.setData({ showShare: true });
-      },
-    
-      onClose() {
-        this.setData({ showShare: false });
-      },
-    
-      onSelect(event) {
-        Toast(event.detail.name);
-        this.onClose();
-      },
+
 
     onLoad() {
       var userinfo=wx.getStorageSync('userInfo')
+      var stringName="userInfo.userName"
+      var stringId="userInfo.userId"
+      var stringImg="userInfo.userHeadimg"
       this.setData({
-        userInfo:userinfo
+        imageUrl:userinfo.avatarUrl,
+        [stringName]:userinfo.nickName,
+        [stringId]:app.globalData.userId,
+        [stringImg]:userinfo.avatarUrl,
       })
+
+
 
     },
     login(e){
@@ -96,7 +89,47 @@ Page({
         title: '已退出登录',
 
       })
-    }
+    },
+    getnumber(e){
+        var stringPhone="userInfo.userPhone"
+        this.setData({
+          [stringPhone]:e.detail.value
+        })
+      },
+      getName(e){
+        var stringName="userInfo.userName"
+        this.setData({
+            [stringName]:e.detail.value
+          })
 
+      },
+      getemail(e){
+        var stringEmail="userInfo.userEmail"
+        this.setData({
+            [stringEmail]:e.detail.value
+          })
+
+      },
+      submitInformation(e){
+          wx.showToast({
+            title: '保存成功',
+            icon:'success'
+          })
+          console.log(this.data.userInfo)
+          wx.request({
+            url: 'http://localhost:8080/user/update',
+            data: this.data.userInfo,
+            header: {
+              'content-type':'application/json'
+            //   'content-type': 'application/x-www-form-urlencoded' 
+          },
+            method: 'post',
+            success: (result)=>{
+              
+            },
+            fail: ()=>{},
+            complete: ()=>{}
+          });
+      }
     
 })

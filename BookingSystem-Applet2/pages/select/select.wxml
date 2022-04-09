@@ -21,19 +21,24 @@
             </view>
         </block>
         <view class="seat-select-heading">
-        <view class="seat-picture">
-            <image class="seat-img" src="../../icon/before-select.png">
-            </image>可选
-        </view>
-        <view class="seat-picture">
-            <image class="seat-img" src="../../icon/after-select.png">
-            </image>已选
-        </view>
-        <view class="seat-picture">
-            <image class="seat-img" src="../../icon/no-seat.png">
-            </image>不可选
+            <view class="seat-picture">
+                <image class="seat-img" src="../../icon/before-select.png">
+                </image>可选
+            </view>
+            <view class="seat-picture">
+                <image class="seat-img" src="../../icon/after-select.png">
+                </image>已选
+            </view>
+            <view class="seat-picture">
+                <image class="seat-img" src="../../icon/no-seat.png">
+                </image>不可选
+            </view>
         </view>
     </view>
+    <view style="text-align: center;">
+        <text>
+            票价：{{ticket.ticketPrice}}/张
+        </text>
     </view>
     <view class="seat-select-bottom">
         <view class="seat-select-ending" wx:if="{{select_seats.length>0}}">
@@ -45,12 +50,12 @@
             </view>
         </view>
 
-            <view wx:if="{{select_seats.length>0}}" class="seat-select-button">
-                <van-button round hairline size="large" type="default" color="#ff820f" bindtap="confirmseat">确定选座</van-button>
-            </view>
-            <view wx:else class="seat-select-button">
-                <van-button round hairline disabled size="large" type="default" color="#ff820f">确定选座</van-button>
-             </view>
+        <view wx:if="{{select_seats.length>0}}" class="seat-select-button">
+            <van-button round hairline size="large" type="default" color="#ff820f" bindtap="confirmseat">确定选座</van-button>
+        </view>
+        <view wx:else class="seat-select-button">
+            <van-button round hairline disabled size="large" type="default" color="#ff820f">确定选座</van-button>
+        </view>
     </view>
 
 

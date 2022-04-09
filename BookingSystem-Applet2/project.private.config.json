@@ -86,6 +86,13 @@
                     "name": "",
                     "pathName": "pages/login/login",
                     "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/information/information",
+                    "query": "",
                     "scene": null,
                     "launchMode": "default"
                 }

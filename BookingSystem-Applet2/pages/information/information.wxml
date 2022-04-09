@@ -1,0 +1,28 @@
+<view class="userinfo">
+    <view class="userinfo-avatar">
+        <!-- <open-data type="userAvatarUrl"></open-data> -->
+        <image src="{{userInfo.userHeadimg}}"></image>
+    </view>
+    <!-- <open-data type="userNickName"></open-data> -->
+</view>
+<van-cell-group>
+    <van-cell title="用户名">
+        <view slot="">
+            <input placeholder="{{userInfo.userName}}" bindinput="getName" />
+        </view>
+    </van-cell>
+    <van-cell title="手机号">
+        <view slot="">
+            <input placeholder="请输入电话号码" type="number" bindinput="getnumber" />
+        </view>
+    </van-cell>
+    <van-cell title="邮箱">
+        <view slot="">
+            <input placeholder="请输入邮箱" type="text" bindinput="getemail" />
+        </view>
+    </van-cell>
+</van-cell-group>
+
+<view class="submit">
+    <van-button round hairline  size="large" type="default" color="#00b8f6" bindtap="submitInformation">保存提交</van-button>
+</view>

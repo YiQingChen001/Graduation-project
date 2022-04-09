@@ -1,10 +1,10 @@
 <view wx:if="{{orders.length>0}}" class="orders">
-    <van-card wx:for="{{orders}}" wx:key="this" title="{{item.ticketMovie}}" thumb="{{ item.ticketPicture}}">
-        <view slot="desc">
+    <van-card wx:for="{{orders}}" wx:key="this" title="{{item.orderMovie}}" thumb="{{ item.ticketPicture}}">
+        <!-- <view slot="desc">
         {{item.movieType}}
-        </view>
+        </view> -->
         <view slot="desc">
-            {{item.ticketCinema}}
+            {{item.orderCinema}}
         </view>
         <view slot="desc">
             {{item.ticketAddress}}
@@ -13,11 +13,17 @@
             {{item.ticketDay}} {{item.ticketTime}} {{item.ticketHall}}
         </view>
         <view slot="desc">
-            <text wx:for="{{item.ticketSeats}}" wx:key="this" wx:for-item="iitem">{{iitem.x}}排{{iitem.y}}座  </text>
+            {{item.orderSeats}}
         </view>
-        <view slot="footer">
+        <view slot="desc">
+            {{item.orderDate}}
+        </view>
+        <view slot="desc">
+            {{item.orderPrice}}元
+        </view>
+        <!-- <view slot="footer">
                 X{{item.ticketSeats.length}}
-        </view>
+        </view> -->
     </van-card>
 </view>
 <view wx:else>

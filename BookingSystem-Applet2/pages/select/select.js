@@ -10,7 +10,7 @@ Page({
             ticketCinema:'',
             ticketAddress:'',
             ticketPicture:'',
-            ticketPrice:'30',
+            ticketPrice:'',
             ticketDay:'',
             ticketHall:'',
             ticketTime:''
@@ -38,15 +38,47 @@ Page({
     },
     onLoad(e) {
         let temp=JSON.parse(e.address);
+        
         this.setData({
             movie: JSON.parse(e.selectmovie),
             ['ticket.ticketCinema']:temp.cinemaName,
             ['ticket.ticketAddress']:temp.cinemaAddress,
             ['ticket.ticketDay']:e.day,
             ['ticket.ticketHall']:e.hall,
-            ['ticket.ticketTime']:e.time
+            ['ticket.ticketTime']:e.time,
         })
         this.init();
+        //根据电影和影院得到票价
+        wx.request({
+            url: 'http://localhost:8080/price/getprice',
+            data: {
+                ticketMovie:this.data.movie.movieName,
+                ticketCinema:this.data.ticket.ticketCinema,
+            },
+            header: {
+              // 'content-type':'application/json'
+              'content-type': 'application/x-www-form-urlencoded' 
+          },
+            method: 'post',
+            success: (res)=>{
+                if(res.data.data){
+                    this.setData({
+                        ['ticket.ticketPrice']:res.data.data
+                    })
+
+                }
+                //票价默认为30
+                else{
+                    this.setData({
+                        ['ticket.ticketPrice']:30
+                    })
+                }
+                
+                console.log(this.data.ticket.ticketPrice)
+            },
+            fail: ()=>{},
+            complete: ()=>{}
+          });
     },
     onChange(event) {
         this.setData({

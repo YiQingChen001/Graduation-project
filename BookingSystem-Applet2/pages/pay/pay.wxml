@@ -40,10 +40,10 @@
         </van-cell-group>
     </view>
     <view wx:if="{{checked}}" class="pay-button">
-        <van-submit-bar price="{{3000*ticket.ticketSeats.length}}" button-text="去支付" bind:submit="toPay" />
+        <van-submit-bar price="{{ticket.ticketPrice*ticket.ticketSeats.length*100}}" button-text="去支付" bind:submit="toPay" />
     </view>
     <view wx:else class="pay-button">
-        <van-submit-bar disabled price="{{3000*ticket.ticketSeats.length}}" button-text="去支付" bind:submit="toPay" />
+        <van-submit-bar disabled price="{{ticket.ticketPrice*ticket.ticketSeats.length*100}}" button-text="去支付" bind:submit="toPay" />
     </view>
 
 </view>

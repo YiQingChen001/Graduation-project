@@ -128,7 +128,11 @@ Page({
     let selectmovie=JSON.stringify(this.data.movie);
     let address=JSON.stringify(e.currentTarget.dataset.address);
     wx.navigateTo({
-      url: '/pages/select/select?selectmovie='+selectmovie+"&address="+address+'&day='+this.data.day+'&hall='+this.data.hall+'&time='+this.data.time,
+      url: '/pages/select/select?selectmovie='+selectmovie+
+      "&address="+address+
+      '&day='+this.data.day+
+      '&hall='+this.data.hall+
+      '&time='+this.data.time,
       success: (result) => {
       },
       fail: () => {
@@ -148,11 +152,23 @@ Page({
         title: '取消收藏',
         icon:'none'
       })
-      for(var i=0;i<arr.length;i++){
-        if(arr[i].movieId==this.data.movie.movieId){
-          arr.splice(i,1);break;
-        }
-      }
+      // for(var i=0;i<arr.length;i++){
+      //   if(arr[i].movieId==this.data.movie.movieId){
+      //     arr.splice(i,1);break;
+      //   }
+      // }
+      wx.request({
+        url: 'http://localhost:8080/collection/delete',
+        header: {"Content-Type": "application/x-www-form-urlencoded"},
+        method: 'post',
+        data:{
+          userId:app.globalData.userId,
+          movieId:this.data.movie.movieId
+        },
+        success: (result)=>{},
+        fail: ()=>{},
+        complete: ()=>{}
+    })
     }else{//如果电影还未收藏
       this.setData({
         is_collect:true
@@ -160,20 +176,52 @@ Page({
       wx.showToast({
         title: '已收藏',
         icon:'none'
-      })
-      arr.push(this.data.movie);
+      }),
+      // arr.push(this.data.movie);
+      wx.request({
+        url: 'http://localhost:8080/collection/insert',
+        header: {"Content-Type": "application/x-www-form-urlencoded"},
+        method: 'post',
+        data:{
+          userId:app.globalData.userId,
+          movieId:this.data.movie.movieId
+        },
+        success: (result)=>{},
+        fail: ()=>{},
+        complete: ()=>{}
+    })
     }
-    app.globalData.collect_movie=arr;
+    // app.globalData.collect_movie=arr;
   },
   init_collcet(e){
-    var movies=app.globalData.collect_movie;
-    for(var i=0;i<movies.length;i++){
-      if(movies[i].movieId==this.data.movie.movieId){
-        this.setData({
-          is_collect:true
-        })
-      }
-    }
+    // var movies=app.globalData.collect_movie;
+    // for(var i=0;i<movies.length;i++){
+    //   if(movies[i].movieId==this.data.movie.movieId){
+    //     this.setData({
+    //       is_collect:true
+    //     })
+    //   }
+    // }
+    wx.request({
+      url: 'http://localhost:8080/collection/is_collection',
+      header: {"Content-Type": "application/x-www-form-urlencoded"},
+      method: 'post',
+      data:{
+        userId:app.globalData.userId,
+        movieId:this.data.movie.movieId
+      },
+      success: (result)=>{
+        console.log(result.data.data)
+        if(result.data.data==1){
+          this.setData({
+            is_collect:true
+          })
+        }
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+  })
   },
   init_date(){
     var arr=this.data.date
