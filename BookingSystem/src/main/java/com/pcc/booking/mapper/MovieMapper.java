@@ -22,4 +22,5 @@ public interface MovieMapper {
     List<Movie> movieList();
 
     List<Movie> hotMovieList();
+
 }

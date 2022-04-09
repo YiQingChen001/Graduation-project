@@ -7,11 +7,9 @@
     <result column="user_email" property="userEmail" jdbcType="VARCHAR" />
     <result column="user_phone" property="userPhone" jdbcType="VARCHAR" />
     <result column="user_headimg" property="userHeadimg" jdbcType="VARCHAR" />
-    <result column="user_number" property="userNumber" jdbcType="VARCHAR" />
-    <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    user_id, user_name, user_email, user_phone, user_headimg, user_number, user_password
+    user_id, user_name, user_email, user_phone, user_headimg
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -19,19 +17,23 @@
     from user
     where user_id = #{userId,jdbcType=BIGINT}
   </select>
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where user_name = #{userName}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from user
     where user_id = #{userId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.pcc.booking.entity.User" >
     insert into user (user_id, user_name, user_email, 
-      user_phone, user_headimg, user_number, 
-      user_password)
+      user_phone, user_headimg)
     values (#{userId,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
-      #{userPhone,jdbcType=VARCHAR}, #{userHeadimg,jdbcType=VARCHAR}, #{userNumber,jdbcType=VARCHAR}, 
-      #{userPassword,jdbcType=VARCHAR})
+      #{userPhone,jdbcType=VARCHAR}, #{userHeadimg,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pcc.booking.entity.User" >
+  <insert id="insertSelective" parameterType="com.pcc.booking.entity.User" useGeneratedKeys="true" keyProperty="userId">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -48,12 +50,6 @@
       </if>
       <if test="userHeadimg != null" >
         user_headimg,
-      </if>
-      <if test="userNumber != null" >
-        user_number,
-      </if>
-      <if test="userPassword != null" >
-        user_password,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -72,12 +68,6 @@
       <if test="userHeadimg != null" >
         #{userHeadimg,jdbcType=VARCHAR},
       </if>
-      <if test="userNumber != null" >
-        #{userNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="userPassword != null" >
-        #{userPassword,jdbcType=VARCHAR},
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.pcc.booking.entity.User" >
@@ -95,12 +85,7 @@
       <if test="userHeadimg != null" >
         user_headimg = #{userHeadimg,jdbcType=VARCHAR},
       </if>
-      <if test="userNumber != null" >
-        user_number = #{userNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="userPassword != null" >
-        user_password = #{userPassword,jdbcType=VARCHAR},
-      </if>
+
     </set>
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
@@ -109,9 +94,7 @@
     set user_name = #{userName,jdbcType=VARCHAR},
       user_email = #{userEmail,jdbcType=VARCHAR},
       user_phone = #{userPhone,jdbcType=VARCHAR},
-      user_headimg = #{userHeadimg,jdbcType=VARCHAR},
-      user_number = #{userNumber,jdbcType=VARCHAR},
-      user_password = #{userPassword,jdbcType=VARCHAR}
+      user_headimg = #{userHeadimg,jdbcType=VARCHAR}
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
 </mapper>
