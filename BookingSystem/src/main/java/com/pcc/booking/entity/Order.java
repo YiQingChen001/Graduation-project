@@ -1,5 +1,6 @@
 package com.pcc.booking.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.util.Date;
@@ -16,6 +17,7 @@ public class Order {
 
     private Float orderPrice;
 
+    @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date orderDate;
 
     private String orderCinema;

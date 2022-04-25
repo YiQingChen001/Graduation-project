@@ -38,6 +38,12 @@ public class MovieServiceImpl implements MovieService {
         return movieMapper.movieList();
     }
 
+    /**
+     * 根据电影名称得到电影详情
+     * @param movieName
+     * @return 电影详情
+     * @throws BusinessException
+     */
     @Override
     public Movie getMovie(String movieName) throws BusinessException {
         Movie movie = movieMapper.selectByMovieName(movieName);
@@ -45,6 +51,10 @@ public class MovieServiceImpl implements MovieService {
         return movie;
     }
 
+    /**
+     * 得到所有正在上映电影
+     * @return 电影列表
+     */
     @Override
     public List<Movie> hotMovieList() {
         return movieMapper.hotMovieList();

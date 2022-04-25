@@ -19,6 +19,10 @@ public class CinemaServiceImpl implements CinemaService {
         return cinemaMapper.selectByName(cinemaName);
     }
 
+    /**
+     * 得到所有的影院信息
+     * @return 影院列表
+     */
     @Override
     public List<Cinema> cinemaList() {
         return cinemaMapper.cinemaList();

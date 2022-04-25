@@ -29,8 +29,12 @@ public class UserController {
         User user = new User();
         user.setUserName(userName);
         long userId = userService.insertUser(user);
-
         return new CommonReturnType("success",userId);
 
+    }
+    @RequestMapping("/getDetail")
+    public  CommonReturnType getDetail(@RequestParam("userName") String userName){
+        User user = userService.selectByName(userName);
+        return new CommonReturnType("success",user);
     }
 }

@@ -12,10 +12,18 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
+
+    /**
+     * 根据用户得到用户id
+     * @param user
+     * @return 用户id
+     */
     @Override
     @Transactional
     public long insertUser(User user) {
+        //根据传进来的用户名称查询用户是否存在
         User user1 = selectByName(user.getUserName());
+        //如果用户不存在，就执行插入语句，并得到用户id返回；否则就直接返回用户id
         if(user1==null) {
             userMapper.insertSelective(user);
             return user.getUserId();
@@ -24,6 +32,11 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    /**
+     * 更新用户信息
+     * @param user
+     * @return 用户id
+     */
     @Override
     public long updateUser(User user) {
         userMapper.updateByPrimaryKeySelective(user);

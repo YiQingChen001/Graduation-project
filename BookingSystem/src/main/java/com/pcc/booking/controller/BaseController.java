@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  *用来处理代码抛出的异常，并返回给前端
  */
-//@ControllerAdvice
+@ControllerAdvice
 public class BaseController {
     @ExceptionHandler(Exception.class)
     @ResponseBody

@@ -21,18 +21,33 @@ public class CollectionServiceImpl implements CollectionService {
     @Autowired
     private MovieMapper movieMapper;
 
+    /**
+     * 添加收藏
+     * @param userId
+     * @param movieId
+     */
     @Override
     @Transactional
     public void insertCollection(long userId, int movieId) {
         collectionMapper.insert(userId,movieId);
     }
 
+    /**
+     * 取消收藏
+     * @param userId
+     * @param movieId
+     */
     @Override
     @Transactional
     public void deleteCollection(long userId, int movieId) {
         collectionMapper.delete(userId,movieId);
     }
 
+    /**
+     * 根据用户id得到改用后收藏的电影列表
+     * @param userId
+     * @return 收藏电影列表
+     */
     @Override
     public List<Movie> collectionList(long userId) {
         List<Integer> list=collectionMapper.selectById(userId);

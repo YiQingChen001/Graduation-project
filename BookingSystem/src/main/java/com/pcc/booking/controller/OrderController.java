@@ -4,6 +4,7 @@ import com.pcc.booking.entity.Order;
 import com.pcc.booking.mapper.OrderMapper;
 import com.pcc.booking.reponse.CommonReturnType;
 import com.pcc.booking.service.OrderService;
+import com.pcc.booking.service.SeatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.web.bind.WebDataBinder;
@@ -23,6 +24,7 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
+
 
     //创建订单
     @RequestMapping("/createorder")
